@@ -14,7 +14,7 @@ export const ProfileCardContainer = styled.div`
   gap: 2rem;
 
   img {
-    height: 148px;
+    height: 9.25rem;
     aspect-ratio: 1;
     object-fit: contain;
     border-radius: 8px;
@@ -59,17 +59,5 @@ export const DataContainer = styled.section`
     display: flex;
     align-items: center;
     gap: 1.5rem;
-
-    div {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-
-      svg {
-        width: 18px;
-        height: 18px;
-        color: ${({ theme }) => theme['base-label']};
-      }
-    }
   }
 `

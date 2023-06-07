@@ -1,12 +1,8 @@
-import { faGithub } from '@fortawesome/free-brands-svg-icons'
-import {
-  faBuilding,
-  faUserGroup,
-  faArrowUpRightFromSquare,
-} from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons'
 
 import { DataContainer, ProfileCardContainer } from './styles'
+import { InfoIcons } from '../../../../components/InfoIcons'
 
 export function ProfileCard() {
   return (
@@ -18,7 +14,7 @@ export function ProfileCard() {
       <DataContainer>
         <header>
           <h1>Bernardo De Marco Gonçalves</h1>
-          <a href="">
+          <a href="" target="_blank">
             <span>github</span>
             <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
           </a>
@@ -29,18 +25,9 @@ export function ProfileCard() {
           pulvinar vel mass.
         </p>
         <div>
-          <div>
-            <FontAwesomeIcon icon={faGithub} />
-            <span>bernardodemarco</span>
-          </div>
-          <div>
-            <FontAwesomeIcon icon={faBuilding} />
-            <span>EJ Pixel</span>
-          </div>
-          <div>
-            <FontAwesomeIcon icon={faUserGroup} />
-            <span>21 seguidores</span>
-          </div>
+          <InfoIcons icon="github" text="bernardodemarco" />
+          <InfoIcons icon="building" text="EJ Pixel" />
+          <InfoIcons icon="userGroup" text="21 seguidores" />
         </div>
       </DataContainer>
     </ProfileCardContainer>
