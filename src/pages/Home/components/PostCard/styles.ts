@@ -23,7 +23,6 @@ export const PostCardContainer = styled.article`
 
     span {
       width: max-content;
-
       color: ${({ theme }) => theme['base-span']};
       font-size: 0.875rem;
     }
@@ -47,7 +46,7 @@ export const PostCardContainer = styled.article`
     border-color: ${({ theme }) => theme['base-border']};
   }
 
-  @media screen and (max-width: 26rem) {
+  @media screen and (max-width: 27rem) {
     width: 90vw;
     height: fit-content;
 

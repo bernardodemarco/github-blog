@@ -6,7 +6,7 @@ export const ProfileCardContainer = styled.section`
 
   width: 100%;
   height: 13.25rem;
-  padding: 2rem 2rem 2rem 1.5rem;
+  padding: 2rem 2rem 2rem 2.5rem;
   border-radius: 10px;
   background-color: ${({ theme }) => theme['base-profile']};
 
@@ -32,7 +32,7 @@ export const DataContainer = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.5625rem;
 
     h1 {
       font-size: 1.5rem;
@@ -41,7 +41,7 @@ export const DataContainer = styled.div`
   }
 
   & > p {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.4375rem;
   }
 
   & > div {
@@ -50,7 +50,7 @@ export const DataContainer = styled.div`
     gap: 1.5rem;
   }
 
-  @media screen and (max-width: 26rem) {
+  @media screen and (max-width: 33.25rem) {
     & > div {
       flex-direction: column;
       align-items: flex-start;

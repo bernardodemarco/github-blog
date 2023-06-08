@@ -26,8 +26,8 @@ export const PostHeaderCardContainer = styled.section`
 export const TextContainer = styled.div`
   h1 {
     font-size: 1.5rem;
-    margin-bottom: 0.5rem;
     line-height: 1.3;
+    margin-bottom: 0.6875rem;
   }
 
   & > div {
