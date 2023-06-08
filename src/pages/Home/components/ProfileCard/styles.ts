@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const ProfileCardContainer = styled.div`
+export const ProfileCardContainer = styled.section`
   position: relative;
   z-index: 1;
 
@@ -27,7 +27,7 @@ export const ProfileCardContainer = styled.div`
   }
 `
 
-export const DataContainer = styled.section`
+export const DataContainer = styled.div`
   header {
     display: flex;
     justify-content: space-between;
@@ -36,6 +36,7 @@ export const DataContainer = styled.section`
 
     h1 {
       font-size: 1.5rem;
+      line-height: 1.3;
     }
   }
 
