@@ -4,9 +4,8 @@ export const HeaderContainer = styled.header`
   height: 296px;
   width: 100%;
 
-  img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-  }
+  background-image: url('/header-background.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 `
