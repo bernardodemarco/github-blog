@@ -12,6 +12,7 @@ export const ProfileCardContainer = styled.div`
 
   display: flex;
   gap: 2rem;
+  align-items: center;
 
   img {
     height: 9.25rem;
@@ -30,24 +31,6 @@ export const DataContainer = styled.section`
 
     h1 {
       font-size: 1.5rem;
-    }
-
-    a {
-      text-decoration: none;
-      text-transform: uppercase;
-      color: ${({ theme }) => theme.blue};
-      font-weight: 700;
-      font-size: 0.75rem;
-
-      svg {
-        margin-left: 0.5rem;
-        color: ${({ theme }) => theme.blue};
-      }
-
-      :hover {
-        transition: border-bottom 0.125s ease-in-out;
-        border-bottom: 2px solid ${({ theme }) => theme.blue};
-      }
     }
   }
 

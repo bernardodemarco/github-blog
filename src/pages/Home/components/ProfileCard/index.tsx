@@ -1,8 +1,6 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons'
-
 import { DataContainer, ProfileCardContainer } from './styles'
 import { InfoIcons } from '../../../../components/InfoIcons'
+import { CustomLink } from '../../../../components/CustomLink'
 
 export function ProfileCard() {
   return (
@@ -14,10 +12,7 @@ export function ProfileCard() {
       <DataContainer>
         <header>
           <h1>Bernardo De Marco Gonçalves</h1>
-          <a href="" target="_blank">
-            <span>github</span>
-            <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
-          </a>
+          <CustomLink icon="external" iconPosition="right" text="github" />
         </header>
         <p>
           Tristique volutpat pulvinar vel massa, pellentesque egestas. Eu
