@@ -20,6 +20,11 @@ export const ProfileCardContainer = styled.div`
     object-fit: contain;
     border-radius: 8px;
   }
+
+  @media screen and (max-width: 45.5rem) {
+    height: fit-content;
+    flex-direction: column;
+  }
 `
 
 export const DataContainer = styled.section`
@@ -42,5 +47,23 @@ export const DataContainer = styled.section`
     display: flex;
     align-items: center;
     gap: 1.5rem;
+  }
+
+  @media screen and (max-width: 26rem) {
+    & > div {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+
+    header {
+      h1 {
+        font-size: 1.25rem;
+      }
+    }
+
+    & > p {
+      font-size: 0.875rem;
+    }
   }
 `

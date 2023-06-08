@@ -46,4 +46,25 @@ export const PostCardContainer = styled.article`
     transition: border-color 0.125s ease-in-out;
     border-color: ${({ theme }) => theme['base-border']};
   }
+
+  @media screen and (max-width: 26rem) {
+    width: 90vw;
+    height: fit-content;
+
+    header {
+      h2 {
+        font-size: 1rem;
+      }
+
+      span {
+        font-size: 0.75rem;
+      }
+    }
+
+    p {
+      font-size: 0.875rem;
+      max-height: calc(1.6 * 0.875rem * 3); // line-height * font-size * lines
+      -webkit-line-clamp: 3; // limits the content to 4 lines
+    }
+  }
 `
