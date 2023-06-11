@@ -12,6 +12,10 @@ export const GlobalStyles = createGlobalStyle`
     box-shadow: none;
   }
 
+  ::selection {
+    background-color: ${({ theme }) => theme['base-label']};
+  }
+
   body {
     background-color: ${({ theme }) => theme['base-background']};
     color: ${({ theme }) => theme['base-text']};
