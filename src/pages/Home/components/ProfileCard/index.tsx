@@ -1,8 +1,13 @@
 import { DataContainer, ProfileCardContainer } from './styles'
 import { InfoIcons } from '../../../../components/InfoIcons'
 import { CustomLink } from '../../../../components/CustomLink'
+import { UserData } from '../..'
 
-export function ProfileCard() {
+interface ProfileCardProps {
+  userData: UserData
+}
+
+export function ProfileCard({ userData }: ProfileCardProps) {
   return (
     <ProfileCardContainer>
       <img

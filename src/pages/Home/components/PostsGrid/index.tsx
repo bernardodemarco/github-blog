@@ -1,7 +1,12 @@
+import { Post } from '../..'
 import { PostCard } from '../PostCard'
 import { Grid } from './styles'
 
-export function PostsGrid() {
+interface PostsGridProps {
+  posts: Post[]
+}
+
+export function PostsGrid({ posts }: PostsGridProps) {
   return (
     <Grid>
       <PostCard />
