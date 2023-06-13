@@ -3,23 +3,34 @@ import {
   faArrowUpRightFromSquare,
   faChevronLeft,
 } from '@fortawesome/free-solid-svg-icons'
-import { LinkContainer } from './styles'
+import { ExternalLink, InternalLink } from './styles'
 
 interface CustomLinkProps {
   text: string
-  icon: 'external' | 'return'
   iconPosition: 'left' | 'right'
+  externalLink: boolean
+  url: string
 }
 
-export function CustomLink({ icon, text, iconPosition }: CustomLinkProps) {
+export function CustomLink({
+  text,
+  iconPosition,
+  externalLink,
+  url,
+}: CustomLinkProps) {
   return (
-    <LinkContainer href="" target="_blank" iconPosition={iconPosition}>
-      <span>{text}</span>
-      {icon === 'external' ? (
-        <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+    <>
+      {externalLink ? (
+        <ExternalLink href={url} target="_blank" iconPosition={iconPosition}>
+          <span>{text}</span>
+          <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+        </ExternalLink>
       ) : (
-        <FontAwesomeIcon icon={faChevronLeft} />
+        <InternalLink to={url} iconPosition={iconPosition}>
+          <span>{text}</span>
+          <FontAwesomeIcon icon={faChevronLeft} />
+        </InternalLink>
       )}
-    </LinkContainer>
+    </>
   )
 }

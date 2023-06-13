@@ -1,8 +1,16 @@
+import { useNavigate } from 'react-router-dom'
 import { PostCardContainer } from './styles'
 
 export function PostCard() {
+  const navigate = useNavigate()
+  const id = 1
+
+  function handlePostClick() {
+    navigate(`/posts/${id}`)
+  }
+
   return (
-    <PostCardContainer>
+    <PostCardContainer onClick={handlePostClick}>
       <header>
         <h2>JavaScript data types and data structures</h2>
         <span>Há 7 meses</span>

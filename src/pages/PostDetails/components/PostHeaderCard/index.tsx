@@ -6,8 +6,18 @@ export function PostHeaderCard() {
   return (
     <PostHeaderCardContainer>
       <div>
-        <CustomLink icon="return" text="voltar" iconPosition="left" />
-        <CustomLink icon="external" text="ver no github" iconPosition="right" />
+        <CustomLink
+          url="/"
+          externalLink={false}
+          text="voltar"
+          iconPosition="left"
+        />
+        <CustomLink
+          url="https://www.github.com/bernardodemarco/coffee-delivery"
+          externalLink
+          text="ver no github"
+          iconPosition="right"
+        />
       </div>
       <TextContainer>
         <h1>JavaScript data types and data structures</h1>

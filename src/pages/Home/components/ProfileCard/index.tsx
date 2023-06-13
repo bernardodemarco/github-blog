@@ -12,7 +12,12 @@ export function ProfileCard() {
       <DataContainer>
         <header>
           <h1>Bernardo De Marco Gonçalves</h1>
-          <CustomLink icon="external" iconPosition="right" text="github" />
+          <CustomLink
+            url="https://www.github.com/bernardodemarco"
+            externalLink
+            iconPosition="right"
+            text="github"
+          />
         </header>
         <p>
           Tristique volutpat pulvinar vel massa, pellentesque egestas. Eu
