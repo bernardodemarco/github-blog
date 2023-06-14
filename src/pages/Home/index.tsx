@@ -2,61 +2,32 @@ import { useEffect, useState } from 'react'
 import { PostsGrid } from './components/PostsGrid'
 import { ProfileCard } from './components/ProfileCard'
 import { SearchForm } from './components/SearchForm'
-import { githubAPI } from '../../lib/axios'
-
-export interface UserData {
-  name: string
-  avatar_url: string
-  bio: string
-  login: string
-  company: string
-  followers: number
-  html_url: string
-}
-
-export interface Post {
-  title: string
-  body: string
-  created_at: string
-  html_url: string
-  number: number
-}
-
-interface PostData {
-  items: Post[]
-}
-
-// CHANGE NAMES
-// REVIEW CODE
+import { UserData, getUserData } from '../../api/user'
+import { PostData, getAllPosts } from '../../api/posts'
 
 export function Home() {
   const [userData, setUserData] = useState<UserData>({} as UserData)
-  const [posts, setPosts] = useState<Post[]>([])
-
-  function getUserData() {
-    return githubAPI.get<UserData>('/users/bernardodemarco')
-  }
-
-  function getPostsData(query: string = '') {
-    return githubAPI.get<PostData>(
-      `/search/issues?q=${query} repo:bernardodemarco/github-blog`,
-    )
-  }
+  const [posts, setPosts] = useState<PostData[]>([])
+  const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
     async function getData() {
-      const responses = await Promise.all([
-        await getUserData(),
-        await getPostsData(),
+      const [userData, allPosts] = await Promise.all([
+        getUserData(),
+        getAllPosts(),
       ])
-      const [userDataResponse, postsDataResponse] = responses
 
-      setUserData(userDataResponse.data)
-      setPosts(postsDataResponse.data.items)
+      setUserData(userData)
+      setPosts(allPosts)
+      setIsLoading(false)
     }
 
     getData()
   }, [])
+
+  if (isLoading) {
+    return <h1>is loading</h1>
+  }
 
   return (
     <>
