@@ -2,7 +2,21 @@ import { CustomLink } from '../../../../components/CustomLink'
 import { InfoIcons } from '../../../../components/InfoIcons'
 import { PostHeaderCardContainer, TextContainer } from './styles'
 
-export function PostHeaderCard() {
+interface PostHeaderProps {
+  postURL: string
+  title: string
+  createdAt: string
+  owner: string
+  comments: number
+}
+
+export function PostHeaderCard({
+  postURL,
+  title,
+  createdAt,
+  owner,
+  comments,
+}: PostHeaderProps) {
   return (
     <PostHeaderCardContainer>
       <div>
@@ -13,18 +27,18 @@ export function PostHeaderCard() {
           iconPosition="left"
         />
         <CustomLink
-          url="https://www.github.com/bernardodemarco/coffee-delivery"
+          url={postURL}
           externalLink
           text="ver no github"
           iconPosition="right"
         />
       </div>
       <TextContainer>
-        <h1>JavaScript data types and data structures</h1>
+        <h1>{title}</h1>
         <div>
-          <InfoIcons icon="github" text="bernardodemarco" />
-          <InfoIcons icon="calendar" text="Há 1 dia" />
-          <InfoIcons icon="comment" text="5 comentários" />
+          <InfoIcons icon="github" text={owner} />
+          <InfoIcons icon="calendar" text={createdAt} />
+          <InfoIcons icon="comment" text={comments.toString()} />
         </div>
       </TextContainer>
     </PostHeaderCardContainer>

@@ -3,17 +3,23 @@ import { githubAPI } from '../lib/axios'
 interface PostRawData {
   title: string
   body: string
+  comments: number
   number: number
   created_at: string
   html_url: string
+  user: {
+    login: string
+  }
 }
 
 export interface PostData {
   title: string
   body: string
+  comments: number
   postId: number
   createdAt: string
   postURL: string
+  owner: string
 }
 
 interface AllPostsRawData {
@@ -24,17 +30,21 @@ function mapPostData(postRawData: PostRawData): PostData {
   const {
     title,
     body,
+    comments,
     number: postId,
     created_at: createdAt,
     html_url: postURL,
+    user: { login: owner },
   } = postRawData
 
   return {
     title,
     body,
+    comments,
     postId,
     createdAt,
     postURL,
+    owner,
   }
 }
 
@@ -44,9 +54,9 @@ function mapAllPostsData(allPostsRawData: AllPostsRawData): PostData[] {
   })
 }
 
-export async function getPost(postId: number): Promise<PostData> {
+export async function getPost(postId: string): Promise<PostData> {
   const { data: postRawData } = await githubAPI.get<PostRawData>(
-    `/repos/bernardodemarco/github-blog/issues${postId}`,
+    `/repos/bernardodemarco/github-blog/issues/${postId}`,
   )
   return mapPostData(postRawData)
 }
