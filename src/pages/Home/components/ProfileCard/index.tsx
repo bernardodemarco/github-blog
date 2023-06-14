@@ -8,7 +8,6 @@ interface ProfileCardProps {
 }
 
 export function ProfileCard({ userData }: ProfileCardProps) {
-  console.log(userData)
   return (
     <ProfileCardContainer>
       <img src={userData.imageSrc} alt="" />

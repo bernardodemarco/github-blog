@@ -28,6 +28,8 @@ export const ProfileCardContainer = styled.section`
 `
 
 export const DataContainer = styled.div`
+  width: 100%;
+
   header {
     display: flex;
     justify-content: space-between;
