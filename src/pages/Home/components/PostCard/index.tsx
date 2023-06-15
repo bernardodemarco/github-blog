@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 import { PostCardContainer } from './styles'
+import { formatDateDistance } from '../../../../utils/formatter'
 
 interface PostCardProps {
   title: string
@@ -19,7 +20,7 @@ export function PostCard({ title, body, postId, createdAt }: PostCardProps) {
     <PostCardContainer onClick={handlePostClick}>
       <header>
         <h2>{title}</h2>
-        <span>{createdAt}</span>
+        <span>{formatDateDistance(createdAt)}</span>
       </header>
       <p>{body}</p>
     </PostCardContainer>

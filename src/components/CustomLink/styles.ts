@@ -1,10 +1,8 @@
 import styled from 'styled-components'
-import React from 'react'
 import { Link } from 'react-router-dom'
 
 interface LinkContainerProps {
   iconPosition: 'left' | 'right'
-  as?: React.ElementType
 }
 
 export const ExternalLink = styled.a<LinkContainerProps>`

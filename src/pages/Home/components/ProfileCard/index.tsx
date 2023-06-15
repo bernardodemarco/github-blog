@@ -25,7 +25,10 @@ export function ProfileCard({ userData }: ProfileCardProps) {
         <div>
           <InfoIcons icon="github" text={userData.username} />
           <InfoIcons icon="building" text={userData.company} />
-          <InfoIcons icon="userGroup" text={userData.followers.toString()} />
+          <InfoIcons
+            icon="userGroup"
+            text={`${userData.followers.toString()} seguidores`}
+          />
         </div>
       </DataContainer>
     </ProfileCardContainer>
