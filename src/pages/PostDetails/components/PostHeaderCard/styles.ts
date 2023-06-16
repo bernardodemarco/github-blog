@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { StyledLink } from '../../../Home/components/ProfileCard/styles'
 import { Link } from 'react-router-dom'
 
 export const PostHeaderCardContainer = styled.section`
@@ -45,6 +46,8 @@ export const InternalLink = styled(Link)`
     border-color: ${({ theme }) => theme.blue};
   }
 `
+
+export const ExternalLink = styled(StyledLink)``
 
 export const TextContainer = styled.div`
   h1 {

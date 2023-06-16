@@ -1,13 +1,13 @@
-import { DataContainer, ProfileCardContainer } from './styles'
+import { DataContainer, ProfileCardContainer, StyledLink } from './styles'
+import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 import { InfoIcons } from '../../../../components/InfoIcons'
-import { ExternalLink } from '../../../../components/ExternalLink'
 import { UserData } from '../../../../api/user'
 
 interface ProfileCardProps {
   userData: UserData
 }
-
-// SPINNER, INPUT, ORGANIZATION NAME, PROFILE CARD STYLES
 
 export function ProfileCard({ userData }: ProfileCardProps) {
   return (
@@ -16,7 +16,10 @@ export function ProfileCard({ userData }: ProfileCardProps) {
       <DataContainer>
         <header>
           <h1>{userData.name}</h1>
-          <ExternalLink url={userData.profileURL} text="github" />
+          <StyledLink href={userData.profileURL} target="_blank">
+            <span>github</span>
+            <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+          </StyledLink>
         </header>
         <p>{userData.bio}</p>
         <div>
