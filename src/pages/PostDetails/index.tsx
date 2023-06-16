@@ -3,6 +3,7 @@ import { PostContent } from './components/PostContent'
 import { PostHeaderCard } from './components/PostHeaderCard'
 import { useEffect, useState } from 'react'
 import { PostData, getPost } from '../../api/posts'
+import { Spinner } from '../../components/Spinner'
 
 export function PostDetails() {
   const [isLoading, setIsLoading] = useState(true)
@@ -25,7 +26,7 @@ export function PostDetails() {
   }, [id, navigate])
 
   if (isLoading) {
-    return <h1>loading ...</h1>
+    return <Spinner />
   }
 
   return (

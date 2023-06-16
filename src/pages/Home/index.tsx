@@ -4,6 +4,7 @@ import { ProfileCard } from './components/ProfileCard'
 import { SearchForm } from './components/SearchForm'
 import { UserData, getUserData } from '../../api/user'
 import { PostData, getPosts } from '../../api/posts'
+import { Spinner } from '../../components/Spinner'
 
 export function Home() {
   const [userData, setUserData] = useState<UserData>({} as UserData)
@@ -16,12 +17,10 @@ export function Home() {
         getUserData(),
         getPosts(),
       ])
-
       setUserData(userData)
       setPosts(allPosts)
       setIsLoading(false)
     }
-
     getData()
   }, [])
 
@@ -30,7 +29,7 @@ export function Home() {
   }
 
   if (isLoading) {
-    return <h1>is loading</h1>
+    return <Spinner />
   }
 
   return (
