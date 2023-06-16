@@ -22,7 +22,7 @@ export interface PostData {
   owner: string
 }
 
-interface AllPostsRawData {
+interface PostsRawData {
   items: PostRawData[]
 }
 
@@ -48,8 +48,8 @@ function mapPostData(postRawData: PostRawData): PostData {
   }
 }
 
-function mapAllPostsData(allPostsRawData: AllPostsRawData): PostData[] {
-  return allPostsRawData.items.map((post: PostRawData): PostData => {
+function mapPostsData(postsRawData: PostsRawData): PostData[] {
+  return postsRawData.items.map((post: PostRawData): PostData => {
     return mapPostData(post)
   })
 }
@@ -61,9 +61,9 @@ export async function getPost(postId: string): Promise<PostData> {
   return mapPostData(postRawData)
 }
 
-export async function getAllPosts(query: string = ''): Promise<PostData[]> {
-  const { data: allPostsRawData } = await githubAPI.get<AllPostsRawData>(
+export async function getPosts(query: string = ''): Promise<PostData[]> {
+  const { data: postsRawData } = await githubAPI.get<PostsRawData>(
     `/search/issues?q=${query} repo:bernardodemarco/github-blog label:blog-post`,
   )
-  return mapAllPostsData(allPostsRawData)
+  return mapPostsData(postsRawData)
 }

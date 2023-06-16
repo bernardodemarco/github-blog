@@ -3,7 +3,7 @@ import { PostsGrid } from './components/PostsGrid'
 import { ProfileCard } from './components/ProfileCard'
 import { SearchForm } from './components/SearchForm'
 import { UserData, getUserData } from '../../api/user'
-import { PostData, getAllPosts } from '../../api/posts'
+import { PostData, getPosts } from '../../api/posts'
 
 export function Home() {
   const [userData, setUserData] = useState<UserData>({} as UserData)
@@ -14,7 +14,7 @@ export function Home() {
     async function getData() {
       const [userData, allPosts] = await Promise.all([
         getUserData(),
-        getAllPosts(),
+        getPosts(),
       ])
 
       setUserData(userData)
@@ -24,6 +24,10 @@ export function Home() {
 
     getData()
   }, [])
+
+  function changePosts(newPosts: PostData[]) {
+    setPosts(newPosts)
+  }
 
   if (isLoading) {
     return <h1>is loading</h1>
@@ -40,7 +44,7 @@ export function Home() {
         company={userData.company}
         followers={userData.followers}
       />
-      <SearchForm />
+      <SearchForm changePosts={changePosts} numberOfPosts={posts.length} />
       <PostsGrid posts={posts} />
     </>
   )
