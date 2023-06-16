@@ -31,7 +31,15 @@ export function Home() {
 
   return (
     <>
-      <ProfileCard userData={userData} />
+      <ProfileCard
+        imageSrc={userData.imageSrc}
+        name={userData.name}
+        profileURL={userData.profileURL}
+        bio={userData.bio}
+        username={userData.username}
+        company={userData.company}
+        followers={userData.followers}
+      />
       <SearchForm />
       <PostsGrid posts={posts} />
     </>

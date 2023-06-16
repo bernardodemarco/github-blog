@@ -3,31 +3,44 @@ import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import { InfoIcons } from '../../../../components/InfoIcons'
-import { UserData } from '../../../../api/user'
 
 interface ProfileCardProps {
-  userData: UserData
+  imageSrc: string
+  name: string
+  profileURL: string
+  bio: string
+  username: string
+  company: string
+  followers: number
 }
 
-export function ProfileCard({ userData }: ProfileCardProps) {
+export function ProfileCard({
+  imageSrc,
+  name,
+  profileURL,
+  bio,
+  username,
+  company,
+  followers,
+}: ProfileCardProps) {
   return (
     <ProfileCardContainer>
-      <img src={userData.imageSrc} alt="" />
+      <img src={imageSrc} alt="" />
       <DataContainer>
         <header>
-          <h1>{userData.name}</h1>
-          <StyledLink href={userData.profileURL} target="_blank">
+          <h1>{name}</h1>
+          <StyledLink href={profileURL} target="_blank">
             <span>github</span>
             <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
           </StyledLink>
         </header>
-        <p>{userData.bio}</p>
+        <p>{bio}</p>
         <div>
-          <InfoIcons icon="github" text={userData.username} />
-          <InfoIcons icon="building" text={userData.company} />
+          <InfoIcons icon="github" text={username} />
+          <InfoIcons icon="building" text={company} />
           <InfoIcons
             icon="userGroup"
-            text={`${userData.followers.toString()} seguidores`}
+            text={`${followers.toString()} seguidores`}
           />
         </div>
       </DataContainer>
