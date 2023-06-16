@@ -63,7 +63,7 @@ export async function getPost(postId: string): Promise<PostData> {
 
 export async function getPosts(query: string = ''): Promise<PostData[]> {
   const { data: postsRawData } = await githubAPI.get<PostsRawData>(
-    `/search/issues?q=${query} repo:bernardodemarco/github-blog label:blog-post`,
+    `/search/issues?q=${query} repo:bernardodemarco/github-blog label:blog-post is:open`,
   )
   return mapPostsData(postsRawData)
 }

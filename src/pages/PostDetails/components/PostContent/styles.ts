@@ -6,7 +6,7 @@ export const Post = styled(ReactMarkdown)`
 
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
+  gap: 1rem;
 
   h1,
   h2,

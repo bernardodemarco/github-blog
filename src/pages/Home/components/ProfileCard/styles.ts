@@ -65,7 +65,7 @@ export const DataContainer = styled.div`
   }
 
   & > p {
-    margin-bottom: 1.4375rem;
+    margin-bottom: 1.625rem;
   }
 
   & > div {
