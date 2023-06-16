@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 export const PostHeaderCardContainer = styled.section`
   position: relative;
@@ -20,6 +21,28 @@ export const PostHeaderCardContainer = styled.section`
 
   @media screen and (max-width: 45.5rem) {
     height: fit-content;
+  }
+`
+
+export const InternalLink = styled(Link)`
+  text-decoration: none;
+  text-transform: uppercase;
+  color: ${({ theme }) => theme.blue};
+  font-weight: 700;
+  font-size: 0.75rem;
+  border-bottom: 2px solid ${({ theme }) => theme['base-profile']};
+
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  svg {
+    color: ${({ theme }) => theme.blue};
+  }
+
+  :hover {
+    transition: border-color 0.125s ease-in-out;
+    border-color: ${({ theme }) => theme.blue};
   }
 `
 

@@ -1,7 +1,9 @@
-import { CustomLink } from '../../../../components/CustomLink'
 import { InfoIcons } from '../../../../components/InfoIcons'
 import { formatDateDistance } from '../../../../utils/formatter'
-import { PostHeaderCardContainer, TextContainer } from './styles'
+import { InternalLink, PostHeaderCardContainer, TextContainer } from './styles'
+import { ExternalLink } from '../../../../components/ExternalLink'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faChevronLeft } from '@fortawesome/free-solid-svg-icons'
 
 interface PostHeaderProps {
   postURL: string
@@ -21,18 +23,11 @@ export function PostHeaderCard({
   return (
     <PostHeaderCardContainer>
       <div>
-        <CustomLink
-          url="/"
-          externalLink={false}
-          iconPosition="left"
-          text="voltar"
-        />
-        <CustomLink
-          url={postURL}
-          externalLink
-          iconPosition="right"
-          text="ver no github"
-        />
+        <InternalLink to="/">
+          <FontAwesomeIcon icon={faChevronLeft} />
+          <span>voltar</span>
+        </InternalLink>
+        <ExternalLink url={postURL} text="ver no github" />
       </div>
       <TextContainer>
         <h1>{title}</h1>

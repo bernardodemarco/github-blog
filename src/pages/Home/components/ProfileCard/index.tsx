@@ -1,11 +1,13 @@
 import { DataContainer, ProfileCardContainer } from './styles'
 import { InfoIcons } from '../../../../components/InfoIcons'
-import { CustomLink } from '../../../../components/CustomLink'
+import { ExternalLink } from '../../../../components/ExternalLink'
 import { UserData } from '../../../../api/user'
 
 interface ProfileCardProps {
   userData: UserData
 }
+
+// SPINNER, INPUT, ORGANIZATION NAME, PROFILE CARD STYLES
 
 export function ProfileCard({ userData }: ProfileCardProps) {
   return (
@@ -14,12 +16,7 @@ export function ProfileCard({ userData }: ProfileCardProps) {
       <DataContainer>
         <header>
           <h1>{userData.name}</h1>
-          <CustomLink
-            url={userData.profileURL}
-            externalLink
-            iconPosition="right"
-            text="github"
-          />
+          <ExternalLink url={userData.profileURL} text="github" />
         </header>
         <p>{userData.bio}</p>
         <div>
