@@ -48,7 +48,9 @@ export function PostHeaderCard({
           <InfoIcons icon="calendar" text={formatDateDistance(createdAt)} />
           <InfoIcons
             icon="comment"
-            text={`${comments.toString()} comentários`}
+            text={`${comments.toString()} ${
+              comments === 1 ? 'comentário' : 'comentários'
+            }`}
           />
         </div>
       </TextContainer>

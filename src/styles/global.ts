@@ -43,7 +43,9 @@ export const GlobalStyles = createGlobalStyle`
     background-color: ${({ theme }) => theme['base-span']};
   }
 
-  @supports (scrollbar-color: red blue) {
+  @supports (scrollbar-color: ${({ theme }) => theme['base-span']} ${({
+  theme,
+}) => theme['base-background']}) {
     body {
       scrollbar-color: ${({ theme }) => theme['base-span']} ${({ theme }) =>
   theme['base-background']};

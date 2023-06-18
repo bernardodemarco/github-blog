@@ -1,9 +1,11 @@
+import { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
+
 import { PostContent } from './components/PostContent'
 import { PostHeaderCard } from './components/PostHeaderCard'
-import { useEffect, useState } from 'react'
-import { PostData, getPost } from '../../api/posts'
 import { Spinner } from '../../components/Spinner'
+
+import { PostData, getPost } from '../../api/posts'
 
 export function PostDetails() {
   const [isLoading, setIsLoading] = useState(true)

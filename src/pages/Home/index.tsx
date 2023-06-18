@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react'
+
 import { PostsGrid } from './components/PostsGrid'
 import { ProfileCard } from './components/ProfileCard'
 import { SearchForm } from './components/SearchForm'
+import { Spinner } from '../../components/Spinner'
+
 import { UserData, getUserData } from '../../api/user'
 import { PostData, getPosts } from '../../api/posts'
-import { Spinner } from '../../components/Spinner'
 
 export function Home() {
   const [userData, setUserData] = useState<UserData>({} as UserData)

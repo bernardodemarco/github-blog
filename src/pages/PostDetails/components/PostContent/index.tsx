@@ -1,6 +1,7 @@
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { nightOwl } from 'react-syntax-highlighter/dist/cjs/styles/prism'
 import remarkGfm from 'remark-gfm'
+
 import { Post } from './styles'
 
 interface PostContentProps {
